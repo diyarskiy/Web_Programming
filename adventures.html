@@ -7,31 +7,67 @@
 
     <title>Rick and Morty - Adventures</title>
 
-    <link rel="stylesheet" href="CSS/style.css">
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet">
 
+    <link rel="stylesheet" href="CSS/style.css">
 </head>
 
 <body class="adventures-page">
 
-   <header class="site-header">
+   <nav id="mainNav" class="navbar navbar-expand-lg navbar-dark bg-dark px-4">
 
-    <div class="logo">
+    <a class="navbar-brand" href="index.html">
         RICK AND MORTY
+    </a>
+
+    <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#mainNavbar"
+        aria-controls="mainNavbar"
+        aria-expanded="false"
+        aria-label="Toggle navigation">
+
+        <span class="navbar-toggler-icon"></span>
+
+    </button>
+
+    <div class="collapse navbar-collapse" id="mainNavbar">
+
+        <div class="navbar-nav ms-auto">
+            <button id="colorBtn" class="btn btn-sm btn-outline-success ms-lg-3">
+    Change color
+</button>
+
+            <a class="nav-link" href="index.html">
+                HOME
+            </a>
+
+            <a class="nav-link" href="characters.html">
+                CHARACTERS
+            </a>
+
+            <a class="nav-link" href="multiverse.html">
+                MULTIVERSE
+            </a>
+
+            <a class="nav-link" href="adventures.html">
+                ADVENTURES
+            </a>
+
+        </div>
+
     </div>
 
-    <nav class="nav-menu">
-        <a href="index.html">HOME</a>
-        <a href="characters.html">CHARACTERS</a>
-        <a href="multiverse.html">MULTIVERSE</a>
-        <a href="adventures.html">ADVENTURES</a>
-    </nav>
-
-</header>
+</nav>
 
 
     <main>
 
-        <section class="adventure-box">
+        <<section class="adventure-box">
 
     <h1>Choose Your Adventure</h1>
 
@@ -40,101 +76,178 @@
         across the Rick and Morty multiverse.
     </p>
 
-    <label for="player-name">Enter your name:</label>
+    <form id="adventureForm" novalidate>
 
-    <input
-        type="text"
-        id="player-name"
-        placeholder="Your name"
-    >
+        <label for="player-name">Enter your name:</label>
+        <input type="text" id="player-name" placeholder="Your name">
+        <span class="error" id="nameError"></span>
 
-    <label for="player-email">Enter your email:</label>
+        <label for="player-email">Enter your email:</label>
+        <input type="email" id="player-email" placeholder="Your email">
+        <span class="error" id="emailError"></span>
 
-    <input
-        type="email"
-        id="player-email"
-        placeholder="Your email"
-    >
+        <label for="player-password">Password:</label>
+        <input type="password" id="player-password" placeholder="At least 8 characters">
+        <span class="error" id="passwordError"></span>
 
-    <label for="destination">Choose destination:</label>
+        <label for="player-confirm">Confirm password:</label>
+        <input type="password" id="player-confirm" placeholder="Repeat password">
+        <span class="error" id="confirmError"></span>
 
-    <select id="destination">
+        <label for="destination">Choose destination:</label>
+        <select id="destination">
+            <option value="">Select a location</option>
+            <option value="earth-c137">Earth C-137</option>
+            <option value="citadel">Citadel of Ricks</option>
+            <option value="blips-and-chitz">Blips and Chitz</option>
+            <option value="prime-dimension">Prime Dimension</option>
+            <option value="doofus-dimension">Doofus Dimension</option>
+        </select>
+        <span class="error" id="destinationError"></span>
 
-        <option value="">Select a location</option>
-        <option value="earth-c137">Earth C-137</option>
-        <option value="citadel">Citadel of Ricks</option>
-        <option value="blips-and-chitz">Blips and Chitz</option>
-        <option value="prime-dimension">Prime Dimension</option>
-        <option value="doofus-dimension">Doofus Dimension</option>
+        <label for="adventure-message">Adventure message:</label>
+        <textarea id="adventure-message" rows="4" placeholder="Write something about your adventure..."></textarea>
+        <span class="error" id="messageError"></span>
 
-    </select>
+        <button type="submit">Start Adventure</button>
 
-    <label for="adventure-message">Adventure message:</label>
-
-    <textarea
-        id="adventure-message"
-        rows="4"
-        placeholder="Write something about your adventure..."
-    ></textarea>
-
-    <button onclick="startAdventure()">
-        Start Adventure
-    </button>
-
-    <p id="message"></p>
+    </form>
 
 </section>
 
-<section class="multiverse-gallery">
+<section class="container my-5">
 
-    <h2>Multiverse Gallery</h2>
+    <h2 class="text-center mb-4">
+        Multiverse Gallery
+    </h2>
 
-    <div class="gallery-grid">
+    <div
+        id="multiverseCarousel"
+        class="carousel slide"
+        data-bs-ride="carousel">
 
-        <div class="gallery-item">
-            <img src="https://images8.alphacoders.com/633/633291.png" alt="Earth C-137">
-            <div class="gallery-caption">Earth C-137</div>
+        <div class="carousel-inner">
+
+            <div class="carousel-item active">
+                <img
+                    src="https://images8.alphacoders.com/633/633291.png"
+                    class="d-block w-100"
+                    alt="Earth C-137">
+
+                <div class="carousel-caption">
+                    <h5>Earth C-137</h5>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <img
+                    src="images/citadel.jpg"
+                    class="d-block w-100"
+                    alt="Citadel of Ricks">
+
+                <div class="carousel-caption">
+                    <h5>Citadel of Ricks</h5>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <img
+                    src="images/blipsandchitz.jpg"
+                    class="d-block w-100"
+                    alt="Blips and Chitz">
+
+                <div class="carousel-caption">
+                    <h5>Blips and Chitz</h5>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <img
+                    src="images/prime.jpg"
+                    class="d-block w-100"
+                    alt="Prime Dimension">
+
+                <div class="carousel-caption">
+                    <h5>Prime Dimension</h5>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <img
+                    src="images/669993.png"
+                    class="d-block w-100"
+                    alt="Doofus Dimension">
+
+                <div class="carousel-caption">
+                    <h5>Doofus Dimension</h5>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <img
+                    src="https://c4.wallpaperflare.com/wallpaper/999/767/698/rick-and-morty-space-wallpaper-preview.jpg"
+                    class="d-block w-100"
+                    alt="C-137 World">
+
+                <div class="carousel-caption">
+                    <h5>C-137 World</h5>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <img
+                    src="https://external-preview.redd.it/better-late-than-never-updated-rick-morty-no-mans-sky-v0-KC6_WNamrTLcZHHUnxqdLR42N1tS6dCo4WlxEigZYp0.jpg?auto=webp&s=d674f3583d5a93c86abb2eab2d0bec30c91e4be4"
+                    class="d-block w-100"
+                    alt="The Citadel">
+
+                <div class="carousel-caption">
+                    <h5>The Citadel</h5>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <img
+                    src="https://cdnb.artstation.com/p/assets/images/images/028/853/683/large/nicholas-cole-jordan-flgtz-rickmorty-panorama-watermarked.jpg?1595716690"
+                    class="d-block w-100"
+                    alt="Intergalactic Arcade">
+
+                <div class="carousel-caption">
+                    <h5>Intergalactic Arcade</h5>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGdrBbyX2g_65TsSOIntKybNp_5AwWkfByoyB6uJmIbg19TkUXjLWx7h7P&s=10"
+                    class="d-block w-100"
+                    alt="Another Dimension">
+
+                <div class="carousel-caption">
+                    <h5>Another Dimension</h5>
+                </div>
+            </div>
+
         </div>
 
-        <div class="gallery-item">
-            <img src="images/citadel.jpg" alt="Citadel of Ricks">
-            <div class="gallery-caption">Citadel of Ricks</div>
-        </div>
+        <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#multiverseCarousel"
+            data-bs-slide="prev">
 
-        <div class="gallery-item">
-            <img src="images/blipsandchitz.jpg" alt="Blips and Chitz">
-            <div class="gallery-caption">Blips and Chitz</div>
-        </div>
+            <span class="carousel-control-prev-icon"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
 
-        <div class="gallery-item">
-            <img src="images/prime.jpg" alt="Prime Dimension">
-            <div class="gallery-caption">Prime Dimension</div>
-        </div>
+        <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#multiverseCarousel"
+            data-bs-slide="next">
 
-        <div class="gallery-item">
-            <img src="images/669993.png" alt="Doofus Dimension">
-            <div class="gallery-caption">Doofus Dimension</div>
-        </div>
-
-        <div class="gallery-item">
-            <img src="https://c4.wallpaperflare.com/wallpaper/999/767/698/rick-and-morty-space-wallpaper-preview.jpg" alt="C-137 World">
-            <div class="gallery-caption">C-137 World</div>
-        </div>
-
-        <div class="gallery-item">
-            <img src="https://external-preview.redd.it/better-late-than-never-updated-rick-morty-no-mans-sky-v0-KC6_WNamrTLcZHHUnxqdLR42N1tS6dCo4WlxEigZYp0.jpg?auto=webp&s=d674f3583d5a93c86abb2eab2d0bec30c91e4be4" alt="Citadel">
-            <div class="gallery-caption">The Citadel</div>
-        </div>
-
-        <div class="gallery-item">
-            <img src="https://cdnb.artstation.com/p/assets/images/images/028/853/683/large/nicholas-cole-jordan-flgtz-rickmorty-panorama-watermarked.jpg?1595716690" alt="Intergalactic Arcade">
-            <div class="gallery-caption">Intergalactic Arcade</div>
-        </div>
-
-        <div class="gallery-item">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGdrBbyX2g_65TsSOIntKybNp_5AwWkfByoyB6uJmIbg19TkUXjLWx7h7P&s=10" alt="Another Dimension">
-            <div class="gallery-caption">Another Dimension</div>
-        </div>
+            <span class="carousel-control-next-icon"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
 
     </div>
 
@@ -144,12 +257,21 @@
             <img src="images/poopybutthole.png" alt="Mr. Poopybutthole" class="adventure-character-left">
 
     <footer>
+        
         <p>
             Team Members: Alinur Baidulla, Diyar Daniyarov
         </p>
+        <div id="datetime"></div>
     </footer>
 
     <script src="script.js"></script>
+    <script src="accordion.js"></script>
 
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
+    </script>
+    <script src="datetime.js"></script>
+    <script src="color.js"></script>
+    
 </body>
 </html>

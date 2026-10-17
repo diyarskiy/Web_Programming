@@ -7,16 +7,67 @@
 
     <title>Rick and Morty Universe</title>
 
+   <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
     <link rel="stylesheet" href="CSS/style.css">
 </head>
 
 <body class="Home-page">
-    <main>
 
+<nav id="mainNav" class="navbar navbar-expand-lg navbar-dark bg-dark px-4">
+
+    <a class="navbar-brand" href="index.html">
+        RICK AND MORTY
+    </a>
+
+    <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#mainNavbar"
+        aria-controls="mainNavbar"
+        aria-expanded="false"
+        aria-label="Toggle navigation">
+
+        <span class="navbar-toggler-icon"></span>
+
+    </button>
+
+    <div class="collapse navbar-collapse" id="mainNavbar">
+
+        <div class="navbar-nav ms-auto" >
+            <button id="colorBtn" class="btn btn-sm btn-outline-success ms-lg-3">
+    Change color
+</button>
+
+            <a class="nav-link" href="index.html">
+                HOME
+            </a>
+
+            <a class="nav-link" href="characters.html">
+                CHARACTERS
+            </a>
+
+            <a class="nav-link" href="multiverse.html">
+                MULTIVERSE
+            </a>
+
+            <a class="nav-link" href="adventures.html">
+                ADVENTURES
+            </a>
+
+        </div>
+
+    </div>
+
+</nav>
+
+    <main>
         <section class="hero">
 
             <div class="hero-content">
-
 
                 <h1 class="welcome">
                     WELCOME TO THE MULTIVERSE
@@ -28,29 +79,13 @@
                     discover incredible adventures.
                 </p>
 
-                <a href="characters.html" class="hero-button">
+                <a href="characters.html" class="hero-button btn btn-success btn-lg">
                     EXPLORE
                 </a>
-
             </div>
 
         </section>
-
     </main>
-    <header class="site-header">
-
-    <div class="logo">
-        RICK AND MORTY
-    </div>
-
-    <nav class="nav-menu">
-        <a href="index.html">HOME</a>
-        <a href="characters.html">CHARACTERS</a>
-        <a href="multiverse.html">MULTIVERSE</a>
-        <a href="adventures.html">ADVENTURES</a>
-    </nav>
-
-</header>
 
     <img
         class="home-character"
@@ -59,7 +94,29 @@
     >
 
 
-    </body>
 
 
+
+<button id="openPopup" class="btn btn-success">Subscribe</button>
+
+<div id="popupOverlay" class="popup-overlay">
+    <div class="popup">
+        <button id="closePopup" class="popup-close">&times;</button>
+        <h2>Subscribe</h2>
+        <form id="subscribeForm">
+    <input type="email" id="subscribeEmail" placeholder="Your email">
+    <button type="submit">Subscribe</button>
+    <p id="subscribeMessage"></p>
+</form>
+    </div>
+</div>
+<footer>
+    <p>Team Members: Alinur Baidulla, Diyar Daniyarov</p>
+</footer>
+    <script src="popup.js"></script>
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
+    </script>
+       <script src="color.js"></script>
+</body>
 </html>
