@@ -1,4 +1,3 @@
-console.log('accordion loaded');
 const questions = document.querySelectorAll('.faq-question');
 
 questions.forEach(function (question) {
