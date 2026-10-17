@@ -135,6 +135,9 @@ body {
 }
 
 .Home-page {
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
     min-height: 100vh;
     background-image: url("../images/RnMIndex.jpg");
     background-size: cover;
@@ -143,6 +146,11 @@ body {
     background-attachment: fixed;
 }
 
+.Home-page main {
+    flex: 1;
+
+    
+}
 .home-character {
     position: absolute;
     bottom: 0;
@@ -155,7 +163,6 @@ body {
     position: relative;
     top: 450px;
     left: 5%;
-    color: aliceblue;
 }
 
 
@@ -172,8 +179,8 @@ body {
 
 .character {
     display: flex;
-    flex: 1 1 280px;
-    max-width: 320px;
+    flex: 0 0 calc(33.333% - 20px);
+    max-width: calc(33.333% - 20px);
 }
 
 .characters-hero {
@@ -235,7 +242,6 @@ body {
     flex-wrap: wrap;
     gap: 25px;
     justify-content: center;
-    align-items: stretch;
 }
 
 .character:hover .character-info {
@@ -425,7 +431,7 @@ footer {
     height: auto;
 }
 
-.multiverse-grid .site-header {
+.multiverse-grid > nav {
     grid-area: header;
 }
 
@@ -688,6 +694,7 @@ body.adventures-page {
     .character {
         width: 100%;
         max-width: 350px;
+        
     }
 
 
@@ -702,6 +709,9 @@ body.adventures-page {
             "main"
             "footer";
     }
+    .multiverse-grid > nav {
+    grid-area: header;
+}
 
     .multiverse-sidebar {
         border-right: none;
@@ -728,4 +738,173 @@ body.adventures-page {
     }
 
     
+}
+
+/* =========================
+   ASSIGNMENT 3
+   RESPONSIVE DESIGN
+   ========================= */
+
+
+/* TABLET */
+@media (max-width: 768px) {
+
+    .welcome {
+        font-size: 36px;
+    }
+
+    #hero-text {
+        font-size: 18px;
+    }
+    .character {
+    flex: 0 0 calc(50% - 15px);
+    max-width: calc(50% - 15px);
+    }   
+}
+
+
+/* MOBILE */
+@media (max-width: 480px) {
+
+    .welcome {
+        font-size: 28px;
+    }
+
+    #hero-text {
+        font-size: 16px;
+    }
+    .character {
+    flex: 0 0 100%;
+    max-width: 100%;
+    }
+    #multiverseCarousel .carousel-item img {
+    height: 250px;
+}
+}
+
+.bootstrap-info {
+    background-color: rgba(10, 30, 45, 0.9);
+    color: white;
+    border-color: #97ce4c;
+}
+
+.bootstrap-info h2,
+.bootstrap-info h3 {
+    color: #97ce4c;
+}
+
+#multiverseCarousel {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+#multiverseCarousel .carousel-item img {
+    height: 500px;
+    object-fit: cover;
+}
+
+#multiverseCarousel .carousel-caption {
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 8px;
+}
+
+.faq {
+    width: 90%;
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: rgba(10, 30, 45, 0.9);
+    color: white;
+    border: 2px solid #97ce4c;
+    border-radius: 15px;
+}
+.faq-answer p {
+    padding: 10px 12px;
+    margin: 0;
+}
+
+.faq h2 {
+    color: #97ce4c;
+    text-align: center;
+}
+
+.faq-question {
+    width: 100%;
+    text-align: left;
+    padding: 12px;
+    margin-top: 10px;
+    background-color: #97ce4c;
+    color: black;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.faq-item.open .faq-answer {
+    max-height: 200px;
+}
+.popup-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup-overlay.active {
+    display: flex;
+}
+
+.popup {
+    position: relative;
+    width: 90%;
+    max-width: 400px;
+    padding: 30px;
+    background-color: rgba(10, 30, 45, 0.98);
+    color: white;
+    border: 2px solid #97ce4c;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.popup input {
+    width: 100%;
+    padding: 10px;
+    margin: 15px 0;
+    border: 2px solid #97ce4c;
+    border-radius: 6px;
+}
+
+.popup-close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+}
+.error {
+    display: block;
+    min-height: 20px;
+    margin-top: 5px;
+    text-align: left;
+    color: #ff6b6b;
+    font-size: 14px;
+}
+
+.adventure-box input.invalid,
+.adventure-box select.invalid,
+.adventure-box textarea.invalid {
+    border-color: #ff6b6b;
 }
