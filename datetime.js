@@ -7,7 +7,8 @@ function updateTime() {
         month: 'long',      // 'long' даст "October"
         day: 'numeric',
         hour: 'numeric',
-        minute: '2-digit'
+        minute: '2-digit',
+        second: '2-digit'
     });
 box.textContent = text.replace(' at', ',');}
 

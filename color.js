@@ -2,6 +2,7 @@ const button = document.getElementById('colorBtn');
 const nav = document.getElementById('mainNav');
 
 const color=["red", "blue", "green", "yellow", "orange", "purple", "pink", "brown", "gray", "black"];
+console.log(nav); // временная проверка
 let index = 0;
 
 button.addEventListener('click', function () {

@@ -908,3 +908,106 @@ body.adventures-page {
 .adventure-box textarea.invalid {
     border-color: #ff6b6b;
 }
+
+
+
+/* Portal Control */
+
+.portal-control {
+    width: 100%;
+    max-width: 600px;
+    margin: 40px auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 20px;
+    padding: 30px;
+    text-align: center;
+
+    background: rgba(10, 30, 45, 0.9);
+    border: 1px solid #97ce4c;
+    border-radius: 12px;
+}
+
+/* Portal appearance */
+
+.portal-circle {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+
+    background: radial-gradient(
+        circle,
+        #caff70 0%,
+        #97ce4c 35%,
+        #00b86b 65%,
+        #003b28 100%
+    );
+
+    border: 5px solid #97ce4c;
+
+    box-shadow:
+        0 0 20px #97ce4c,
+        0 0 40px rgba(0, 255, 100, 0.5);
+
+    transition: transform 0.5s ease;
+}
+
+/* Animation when portal is activated */
+
+.portal-circle.active {
+    animation: portalSpin 1.5s ease-in-out;
+}
+
+@keyframes portalSpin {
+    0% {
+        transform: scale(1) rotate(0deg);
+    }
+
+    50% {
+        transform: scale(1.3) rotate(180deg);
+    }
+
+    100% {
+        transform: scale(1) rotate(360deg);
+    }
+}
+
+/* Button */
+
+#activatePortal {
+    padding: 12px 25px;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Result */
+
+#portalResult {
+    color: #97ce4c;
+    font-size: 24px;
+}
+
+#portalDescription {
+    color: white;
+    font-size: 16px;
+}
+
+.form-step {
+    display: none;
+}
+
+.form-step.active {
+    display: block;
+}
+
+.form-navigation {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin-top: 25px;
+}

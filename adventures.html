@@ -65,55 +65,89 @@
 </nav>
 
 
-    <main>
+<main>
 
-        <section class="adventure-box">
+    <section class="adventure-box">
 
-    <h1>Choose Your Adventure</h1>
+        <h1>Choose Your Adventure</h1>
 
-    <p>
-        Select a destination and start your journey
-        across the Rick and Morty multiverse.
-    </p>
+        <p>
+            Select a destination and start your journey
+            across the Rick and Morty multiverse.
+        </p>
 
-    <form id="adventureForm" novalidate>
+        <form id="adventureForm" novalidate>
 
-        <label for="player-name">Enter your name:</label>
-        <input type="text" id="player-name" placeholder="Your name">
-        <span class="error" id="nameError"></span>
+            <!-- STEP 1 -->
+            <div class="form-step active" data-step="1">
 
-        <label for="player-email">Enter your email:</label>
-        <input type="email" id="player-email" placeholder="Your email">
-        <span class="error" id="emailError"></span>
+                <h2>Step 1: Personal Information</h2>
 
-        <label for="player-password">Password:</label>
-        <input type="password" id="player-password" placeholder="At least 8 characters">
-        <span class="error" id="passwordError"></span>
+                <label for="player-name">Enter your name:</label>
+                <input type="text" id="player-name" placeholder="Your name">
+                <span class="error" id="nameError"></span>
 
-        <label for="player-confirm">Confirm password:</label>
-        <input type="password" id="player-confirm" placeholder="Repeat password">
-        <span class="error" id="confirmError"></span>
+                <label for="player-email">Enter your email:</label>
+                <input type="email" id="player-email" placeholder="Your email">
+                <span class="error" id="emailError"></span>
 
-        <label for="destination">Choose destination:</label>
-        <select id="destination">
-            <option value="">Select a location</option>
-            <option value="earth-c137">Earth C-137</option>
-            <option value="citadel">Citadel of Ricks</option>
-            <option value="blips-and-chitz">Blips and Chitz</option>
-            <option value="prime-dimension">Prime Dimension</option>
-            <option value="doofus-dimension">Doofus Dimension</option>
-        </select>
-        <span class="error" id="destinationError"></span>
+            </div>
 
-        <label for="adventure-message">Adventure message:</label>
-        <textarea id="adventure-message" rows="4" placeholder="Write something about your adventure..."></textarea>
-        <span class="error" id="messageError"></span>
+            <!-- STEP 2 -->
+            <div class="form-step" data-step="2">
 
-        <button type="submit">Start Adventure</button>
+                <h2>Step 2: Security</h2>
 
-    </form>
+                <label for="player-password">Password:</label>
+                <input type="password" id="player-password" placeholder="At least 8 characters">
+                <span class="error" id="passwordError"></span>
 
-</section>
+                <label for="player-confirm">Confirm password:</label>
+                <input type="password" id="player-confirm" placeholder="Repeat password">
+                <span class="error" id="confirmError"></span>
+
+            </div>
+
+            <!-- STEP 3 -->
+            <div class="form-step" data-step="3">
+
+                <h2>Step 3: Choose Your Adventure</h2>
+
+                <label for="destination">Choose destination:</label>
+                <select id="destination">
+                    <option value="">Select a location</option>
+                    <option value="earth-c137">Earth C-137</option>
+                    <option value="citadel">Citadel of Ricks</option>
+                    <option value="blips-and-chitz">Blips and Chitz</option>
+                    <option value="prime-dimension">Prime Dimension</option>
+                    <option value="doofus-dimension">Doofus Dimension</option>
+                </select>
+                <span class="error" id="destinationError"></span>
+
+                <label for="adventure-message">Adventure message:</label>
+                <textarea id="adventure-message" rows="4"
+                    placeholder="Write something about your adventure..."></textarea>
+                <span class="error" id="messageError"></span>
+
+            </div>
+
+            <!-- NAVIGATION -->
+            <div class="form-navigation">
+
+                <button type="button" id="backBtn">Back</button>
+
+                <button type="button" id="nextBtn">Next</button>
+
+                <button type="submit" id="submitBtn">
+                    Start Adventure
+                </button>
+
+            </div>
+
+        </div>
+
+        </form>
+    </section>
 
 <section class="container my-5">
 
@@ -272,6 +306,7 @@
     </script>
     <script src="datetime.js"></script>
     <script src="color.js"></script>
-    
+    <script src="adventures-step.js"></script>
+    <script src="keyboard.js"></script>
 </body>
 </html>
