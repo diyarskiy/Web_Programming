@@ -164,7 +164,27 @@ body {
     top: 450px;
     left: 5%;
 }
-
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 40px; /* Добавляем отступ сверху, чтобы текст не залезал на навбар */
+    z-index: 2;
+    position: relative;
+}
+#timeGreeting {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #ffc107 !important;
+    background: rgba(0, 0, 0, 0.75); /* Плотная темная подложка, чтобы текст читался на любом фоне */
+    padding: 8px 16px;
+    border-radius: 6px;
+    display: inline-block;
+    position: relative;
+    z-index: 10;
+    margin-left: 15px; /* Небольшой отступ слева от края */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
 
 /* =========================
    CHARACTERS PAGE
