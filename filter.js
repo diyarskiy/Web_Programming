@@ -18,4 +18,22 @@ if (searchInput) {
             }
         });
     });
+
+const matchingCharacters = Array.from(characters).filter(function (card) {
+    const text = card.textContent.toLowerCase();
+
+    return text.includes(query);
+});
+
+const matchingNames = matchingCharacters.map(function (card) {
+    return card.querySelector("h2").textContent;
+});
+
+characters.forEach(function (card) {
+    card.style.display = matchingCharacters.includes(card)
+        ? ""
+        : "none";
+});
+
+console.log("Found characters:", matchingNames);
 }

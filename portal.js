@@ -43,4 +43,10 @@ portalButton.addEventListener('click', function () {
     portalSound.play().catch(function (error) {
         console.log('Sound could not be played:', error);
     });
+
+    portalButton.disabled = true;
+
+    setTimeout(function () {
+        portalButton.disabled = false;
+}, 1500);
 });
