@@ -43,6 +43,18 @@ body {
     font-weight: bold;
 }
 
+@media (max-width: 1000px) {
+    .characters-page .character-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 650px) {
+    .characters-page .character-list {
+        grid-template-columns: 1fr;
+    }
+}
+
 /* =========================
    NAVIGATION
    ========================= */
@@ -119,19 +131,13 @@ body {
     color: white;
     font-size: 36px;
     margin-bottom: 20px;
-    position: relative;
-    top: 450px;
-    left: 5%;
 }
-
 #hero-text {
     color: white;
     font-size: 18px;
     max-width: 600px;
     margin-bottom: 20px;
-    position: relative;
-    top: 450px;
-    left: 5%;
+    line-height: 1.6;
 }
 
 .Home-page {
@@ -160,9 +166,8 @@ body {
 }
 
 .hero-button {
-    position: relative;
-    top: 450px;
-    left: 5%;
+    display: inline-block;
+    text-decoration: none;
 }
 .hero-content {
     display: flex;
@@ -186,6 +191,91 @@ body {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
+/* HOME HERO - Final Layout */
+
+.Home-page .hero {
+    position: relative;
+    min-height: 650px;
+
+    display: flex;
+    align-items: flex-end;
+}
+
+.Home-page .hero-content {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    width: 100%;
+    max-width: 750px;
+
+    padding: 40px 5% 65px;
+    margin: 0;
+
+    z-index: 2;
+}
+
+.Home-page .multiverse-stats {
+    position: relative;
+    margin: 0;
+    z-index: 1;
+}
+
+@media (max-width: 768px) {
+    .Home-page .hero {
+        min-height: 550px;
+    }
+
+    .Home-page .hero-content {
+        padding: 30px 20px 50px;
+    }
+}
+
+/* Home page action buttons */
+
+.Home-page .hero-actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 8px;
+}
+
+.Home-page .hero-actions .hero-button,
+.Home-page .hero-actions #openPopup {
+    position: static;
+    transform: none;
+    margin: 0;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 6px;
+}
+
+.Home-page .hero-actions #openPopup {
+    background: rgba(0, 0, 0, 0.25);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+.Home-page .hero-actions #openPopup:hover {
+    background: white;
+    color: #172019;
+}
+
+@media (max-width: 480px) {
+    .Home-page .hero-actions {
+        gap: 10px;
+    }
+
+    .Home-page .hero-actions .hero-button,
+    .Home-page .hero-actions #openPopup {
+        padding: 10px 16px;
+        font-size: 14px;
+    }
+}
 /* =========================
    CHARACTERS PAGE
    ========================= */
@@ -198,9 +288,10 @@ body {
 }
 
 .character {
-    display: flex;
-    flex: 0 0 calc(33.333% - 20px);
-    max-width: calc(33.333% - 20px);
+    display: block;
+    width: 100%;
+    max-width: none;
+    min-width: 0;
 }
 
 .characters-hero {
@@ -258,10 +349,11 @@ body {
 }
 
 .character-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 25px;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    width: 100%;
+    align-items: stretch;
 }
 
 .character:hover .character-info {
@@ -532,6 +624,78 @@ footer {
     gap: 20px;
 }
 
+/* Assignment 6 - Minimal Statistics */
+
+/* Minimal Multiverse Statistics */
+
+.multiverse-stats {
+    background: #11191c;
+    padding: 45px 24px 55px;
+    text-align: center;
+}
+
+.multiverse-stats h2 {
+    color: #f1f5f2;
+    font-size: 26px;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+.stats-container {
+    display: flex;
+    justify-content: center;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.stat-card {
+    flex: 1;
+    min-width: 0;
+    max-width: none;
+    padding: 15px 20px;
+
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+
+    transform: none;
+    transition: none;
+}
+
+.stat-card:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+.stat-card:not(:last-child) {
+    border-right: 1px solid #34443e;
+}
+
+.stat-card h3 {
+    font-size: 36px;
+    color: #9cca96;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.stat-card p {
+    font-size: 14px;
+    color: #a7b3ac;
+    margin: 0;
+}
+
+@media (max-width: 600px) {
+    .stats-container {
+        flex-direction: column;
+    }
+
+    .stat-card:not(:last-child) {
+        border-right: none;
+        border-bottom: 1px solid #34443e;
+    }
+}
+
 /* =========================
    ADVENTURES PAGE
    ========================= */
@@ -671,33 +835,6 @@ body.adventures-page {
     height: auto;
 }
 
-/* =========================
-   RESPONSIVE DESIGN
-   ========================= */
-
-@media (max-width: 768px) {
-
-    /* HEADER */
-
-    .site-header {
-        flex-direction: column;
-        gap: 15px;
-        padding: 20px;
-    }
-
-    .nav-menu {
-        flex-wrap: wrap;
-    }
-
-
-    /* HOME */
-
-    .welcome,
-    #hero-text,
-    .hero-button {
-        left: 20px;
-    }
-
 
     /* CHARACTERS */
 
@@ -758,8 +895,6 @@ body.adventures-page {
     }
 
     
-}
-
 /* =========================
    ASSIGNMENT 3
    RESPONSIVE DESIGN
@@ -1030,4 +1165,251 @@ body.adventures-page {
     justify-content: space-between;
     gap: 15px;
     margin-top: 25px;
+}
+
+.character-search-container {
+    position: relative;
+}
+
+#searchSuggestions {
+    position: absolute;
+    top: 100%;
+    left: 12px;
+    right: 12px;
+    background: #222;
+    color: white;
+    z-index: 100;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.suggestion-item {
+    padding: 12px;
+    cursor: pointer;
+    border-bottom: 1px solid #444;
+}
+
+.suggestion-item:hover {
+    background: #198754;
+}
+
+/* Assignment 6 - Multiverse Search */
+
+.multiverse-search-box {
+    width: 100%;
+    max-width: 850px;
+    margin: 0 auto 35px;
+    padding: 22px 26px;
+
+    background: rgba(5, 19, 29, 0.94);
+
+    border: 1px solid #88ff00;
+    border-radius: 16px;
+
+    box-shadow:
+        0 0 12px rgba(136, 255, 0, 0.3),
+        0 0 30px rgba(0, 255, 170, 0.1);
+}
+
+.multiverse-search-heading {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    margin-bottom: 14px;
+
+    color: #aaff00;
+    font-size: 17px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+}
+
+#multiverseSearch {
+    width: 100%;
+    padding: 14px 18px;
+
+    background: #102b32;
+    color: white;
+
+    border: 1px solid #287f64;
+    border-radius: 10px;
+
+    font-size: 16px;
+}
+
+#multiverseSearch::placeholder {
+    color: #a2b8b5;
+}
+
+#multiverseSearch:focus {
+    background: #102b32;
+    color: white;
+
+    border-color: #aaff00;
+
+    box-shadow: 0 0 12px rgba(170, 255, 0, 0.35);
+    outline: none;
+}
+
+.search-hint {
+    margin: 12px 0 0;
+
+    color: #a2b8b5;
+    font-size: 13px;
+}
+
+@media (max-width: 768px) {
+    .multiverse-search-box {
+        padding: 16px;
+        margin-bottom: 24px;
+    }
+
+    #multiverseSearch {
+        font-size: 16px;
+    }
+}
+
+/* Assignment 6: Scroll Progress Bar */
+
+#scrollProgress {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 0%;
+    height: 6px;
+
+    background: linear-gradient(
+        90deg,
+        #00ff88,
+        #aaff00,
+        #00ffcc
+    );
+
+    box-shadow: 0 0 12px #00ff88;
+
+    z-index: 9999;
+
+    transition: width 0.1s linear;
+}
+
+.Home-page .hero {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    min-height: 650px;
+}
+
+.Home-page .hero .hero-content {
+    position: relative;
+    display: block;
+    visibility: visible;
+    opacity: 1;
+
+    top: auto;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    transform: none;
+
+    width: 100%;
+    max-width: 750px;
+    margin: 0;
+    padding: 40px 5% 65px;
+    z-index: 5;
+}
+
+.Home-page .hero .welcome,
+.Home-page .hero #hero-text {
+    color: white;
+}
+
+/* Assignment 6 - Notification System */
+
+.adventure-toast {
+    position: fixed;
+    top: 90px;
+    right: 24px;
+    z-index: 9999;
+
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+
+    width: min(350px, calc(100vw - 32px));
+    padding: 18px;
+
+    background: #1b2926;
+    color: white;
+
+    border: 1px solid #476f56;
+    border-radius: 10px;
+
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.2);
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-12px);
+
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease,
+        visibility 0.3s ease;
+
+    pointer-events: none;
+}
+
+.adventure-toast.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.toast-symbol {
+    color: #91c89c;
+    font-size: 23px;
+    font-weight: bold;
+}
+
+.toast-content strong {
+    display: block;
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
+.toast-content p {
+    margin: 0;
+    font-size: 13px;
+    color: #b8c6be;
+}
+
+@media (max-width: 600px) {
+    .adventure-toast {
+        top: 75px;
+        right: 16px;
+    }
+}
+
+/* Assignment 6 - Copy to Clipboard */
+
+#copyPortalBtn {
+    padding: 9px 18px;
+    font-size: 14px;
+    border-radius: 6px;
+    font-weight: 500;
+}
+
+#copyFeedback {
+    display: block;
+    min-height: 20px;
+    margin-top: 4px;
+    color: #a5d6a7;
+    font-size: 13px;
+}
+
+/* Assignment 6 - Lazy Loading */
+
+.character-info img.lazy-image {
+    background-color: #e8ece8;
+    min-height: 220px;
 }

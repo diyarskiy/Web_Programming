@@ -139,12 +139,20 @@
                 <button type="button" id="nextBtn">Next</button>
 
                 <button type="submit" id="submitBtn">
-                    Start Adventure
+
+                    <span
+                        id="submitSpinner"
+                        class="spinner-border spinner-border-sm me-2 d-none"
+                        role="status"
+                        aria-hidden="true">
+                    </span>
+
+                    <span id="submitText">Start Adventure</span>
+
                 </button>
 
             </div>
 
-        </div>
 
         </form>
     </section>
@@ -287,7 +295,15 @@
 
 </section>
 
-    </main>
+<div id="adventureToast" class="adventure-toast" role="status" aria-live="polite">
+    <span class="toast-symbol">✓</span>
+
+    <div class="toast-content">
+        <strong>Adventure confirmed!</strong>
+        <p>Opening your destination...</p>
+    </div>
+</div>
+
             <img src="images/poopybutthole.png" alt="Mr. Poopybutthole" class="adventure-character-left">
 
     <footer>
@@ -298,15 +314,18 @@
         <div id="datetime"></div>
     </footer>
 
-    <script src="script.js"></script>
-    <script src="accordion.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
-    <script
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
-    </script>
-    <script src="datetime.js"></script>
-    <script src="color.js"></script>
-    <script src="adventures-step.js"></script>
-    <script src="keyboard.js"></script>
+<script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
+
+<script src="js/script.js"></script>
+<script src="js/accordion.js"></script>
+<script src="js/datetime.js"></script>
+<script src="js/color.js"></script>
+<script src="js/keyboard.js"></script>
+
+<script src="js/loading.js"></script>
+<script src="js/notification.js"></script>
+<script src="js/adventures-step.js"></script>
 </body>
 </html>

@@ -84,21 +84,24 @@
                     discover incredible adventures.
                 </p>
 
-                <a href="characters.html" class="hero-button btn btn-success btn-lg">
-                    EXPLORE
-                </a>
+                <div class="hero-actions">
+                    <a href="characters.html" class="hero-button btn btn-success btn-lg">
+                        EXPLORE
+                    </a>
+
+                    <button id="openPopup" class="btn btn-outline-light btn-lg">
+                        Subscribe
+                    </button>
+                </div>
             </div>
 
         </section>
-    </main>
 
     <img
         class="home-character"
         src="images/poopybutthole.png"
         alt="Mr. Poopybutthole"
     >
-
-<button id="openPopup" class="btn btn-success">Subscribe</button>
 
 <div id="popupOverlay" class="popup-overlay">
     <div class="popup">
@@ -111,15 +114,51 @@
 </form>
     </div>
 </div>
+
+<section class="multiverse-stats">
+
+    <h2>🌀 MULTIVERSE STATISTICS</h2>
+
+    <div class="stats-container">
+
+        <div class="stat-card">
+            <h3>
+                <span class="counter" data-target="1000">0</span>+
+            </h3>
+            <p>Dimensions</p>
+        </div>
+
+        <div class="stat-card">
+            <h3>
+                <span class="counter" data-target="500">0</span>+
+            </h3>
+            <p>Adventures</p>
+        </div>
+
+        <div class="stat-card">
+            <h3>
+                <span class="counter" data-target="137">0</span>+
+            </h3>
+            <p>Portals</p>
+        </div>
+
+    </div>
+
+</section>
+</main>
+
 <footer>
     <p>Team Members: Alinur Baidulla, Diyar Daniyarov</p>
 </footer>
-    <script src="greeting.js"></script>
-    <script src="popup.js"></script>
+    <script src="js/greeting.js"></script>
+    <script src="js/popup.js"></script>
     <script
         src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
     </script>
-    <script src="color.js"></script>
-     <script src="keyboard.js"></script>
+    <script src="js/color.js"></script>
+    <script src="js/keyboard.js"></script>
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/counter.js"></script>
 </body>
 </html>
