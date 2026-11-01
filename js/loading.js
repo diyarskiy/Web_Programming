@@ -4,9 +4,6 @@ $(document).ready(function () {
     const spinner = $("#submitSpinner");
     const text = $("#submitText");
 
-    if (submitBtn.disabled) {
-    return;
-}
 
     window.adventureLoading = {
 
