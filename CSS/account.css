@@ -14,7 +14,7 @@ input { width: 100%; display: block; padding: 10px 12px; margin-top: 4px; backgr
 
 h1, h2 { margin: 0; line-height: 1.08; letter-spacing: -.045em; }
 .login-layout { display: grid; grid-template-columns: 1.1fr 1fr; min-height: calc(100vh - 60px); }
-.portal-art { background: #23352b url(../images/c137_.jpeg) 73% center/cover; }
+.portal-art { background: #000 url("../images/account-portal.webp") center / contain no-repeat; }
 .login-panel { padding: clamp(32px, 6vw, 90px); background: #f8f6ef; display: flex; flex-direction: column; justify-content: center; }
 .login-panel h1 { font-size: clamp(32px, 3vw, 50px); margin-bottom: 12px; }
 .login-panel .action { width: 100%; }
@@ -33,7 +33,6 @@ dd { margin: 0; overflow-wrap: anywhere; }
 #accountLink { color: #d6efa9; }
 @media (max-width: 760px) {
  .login-layout { grid-template-columns: 1fr; grid-template-rows: 150px auto; min-height: auto; }
- .portal-art { background-position: center 60%; }
  .login-panel { padding: 28px 6vw 40px; }
  .pass-body { grid-template-columns: 1fr; padding: 22px; gap: 16px; }
  .monogram { width: 80px; font-size: 30px; }
