@@ -1,0 +1,40 @@
+* { box-sizing: border-box; }
+body { margin: 0; background: #141b1d; color: #202c26; font: 16px/1.45 Arial, sans-serif; }
+.switch { display: flex; align-items: center; }
+.switch { gap: 18px; border-bottom: 1px solid #bfc9bc; margin-bottom: 22px; }
+button { cursor: pointer; font: inherit; }
+.switch button { background: transparent; padding: 4px 0 9px; border: 0; border-bottom: 3px solid transparent; color: #465247; }
+.switch [aria-pressed=true] { border-color: #54802b; color: #25441a; font-weight: bold; }
+label, dt { display: block; font-size: 14px; font-weight: bold; margin: 15px 0 5px; }
+[hidden] { display: none !important; }
+input { width: 100%; display: block; padding: 10px 12px; margin-top: 4px; background: white; border: 1px solid #909b91; border-radius: 4px; font: inherit; }
+.action { display: inline-block; background: #97ce4c; padding: 10px 22px; border: 0; border-radius: 4px; color: #172416; font-weight: bold; text-decoration: none; transition: background .18s; }
+.action:hover { background: #b2e26e; }
+#message { color: #952e21; }
+
+h1, h2 { margin: 0; line-height: 1.08; letter-spacing: -.045em; }
+.login-layout { display: grid; grid-template-columns: 1.1fr 1fr; min-height: calc(100vh - 60px); }
+.portal-art { background: #23352b url(../images/c137_.jpeg) 73% center/cover; }
+.login-panel { padding: clamp(32px, 6vw, 90px); background: #f8f6ef; display: flex; flex-direction: column; justify-content: center; }
+.login-panel h1 { font-size: clamp(32px, 3vw, 50px); margin-bottom: 12px; }
+.login-panel .action { width: 100%; }
+.profile-wrap { width: min(720px, 92%); margin: clamp(32px, 7vw, 92px) auto; }
+.profile-wrap h1 { color: #f8f6ef; font-size: clamp(38px, 5vw, 66px); margin-bottom: 28px; }
+.pass { border-radius: 14px; overflow: hidden; background: #f8f6ef; }
+.pass-head, .profile-actions { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
+.pass-head { padding: 16px 24px; background: #97ce4c; font-family: monospace; }
+.pass-head strong { text-transform: uppercase; letter-spacing: .09em; }
+.pass-body { display: grid; grid-template-columns: 135px minmax(0,1fr); align-items: start; padding: 32px; gap: 30px; }
+.monogram { display: grid; place-items: center; aspect-ratio: 1; border-radius: 50%; color: #f8f6ef; background: linear-gradient(#172a23aa,#172a23bb), url(../images/Multi.jpg) center/cover; font: bold 44px monospace; }
+.pass h2 { font-size: clamp(28px,4vw,48px); overflow-wrap: anywhere; }
+dl { margin: 18px 0 0; }
+dd { margin: 0; overflow-wrap: anywhere; }
+.profile-actions { margin-top: 22px; }
+#accountLink { color: #d6efa9; }
+@media (max-width: 760px) {
+ .login-layout { grid-template-columns: 1fr; grid-template-rows: 150px auto; min-height: auto; }
+ .portal-art { background-position: center 60%; }
+ .login-panel { padding: 28px 6vw 40px; }
+ .pass-body { grid-template-columns: 1fr; padding: 22px; gap: 16px; }
+ .monogram { width: 80px; font-size: 30px; }
+}

@@ -1,0 +1,96 @@
+/* A simple reading layout for the location guide and trip form. */
+.guide-page, .planner-page { background: #fafaf7; color: #252925; }
+main.guide { display: block; min-height: auto; padding: 0; }
+.guide h1, .planner h1 { font-size: 2rem; font-weight: 650; }
+.guide h2, .planner h2 { font-size: 1.25rem; }
+.guide label, .planner label { display: block; margin: 16px 0 5px; }
+.guide input, .planner-form input, .planner-form select, .planner-form textarea {
+    width: 100%; padding: 9px 12px; border: 1px solid #929a92; border-radius: 4px; background: white; color: #252925;
+}
+.guide input { max-width: 400px; }
+.location-links { margin: 18px 0 24px; line-height: 1.9; }
+.location-entry { display: flex; gap: 20px; align-items: center; padding: 18px 0; border-top: 1px solid #d3d6cf; }
+.location-entry img { object-fit: cover; }
+.location-entry p { margin: 0; }
+.guide-portal, .planner-gallery { margin-top: 32px; padding-top: 20px; border-top: 1px solid #c8cdc5; }
+.guide-portal .portal-circle { width: 70px; height: 70px; margin: 16px 0; box-shadow: none; }
+.guide-portal #portalResult { color: #255a3b; font-size: 1.15rem; margin: 14px 0 4px; }
+.guide-portal #portalDescription, .guide-portal #copyFeedback { color: #364438; }
+.planner-form textarea { min-height: 80px; }
+.planner-form .error { min-height: 0; color: #a42727; }
+.planner-form .invalid { border-color: #a42727; }
+.planner-form button { padding: 8px 18px; border: 0; border-radius: 4px; color: white; background: #285a40; }
+.planner-form button:disabled { opacity: .65; }
+.planner #multiverseCarousel .carousel-item img { height: auto; aspect-ratio: 16 / 8; object-fit: cover; }
+@media (max-width: 480px) {
+    .location-entry { align-items: flex-start; gap: 12px; }
+    .guide h1, .planner h1 { font-size: 1.65rem; }
+}
+
+/* Match the illustrated headers and light content panel on Characters. */
+.guide-page, .planner-page { background: #141b1d; font-family: Arial, sans-serif; }
+.world-banner {
+    display: flex; align-items: flex-end; min-height: clamp(210px, 27vw, 330px);
+    color: white; background-size: cover; background-position: center;
+}
+.planner-page .world-banner {
+    background-image: linear-gradient(90deg, rgba(6,18,20,.90), transparent 82%), url("../images/portalAD.jpg");
+}
+.world-banner > div { width: min(100% - 36px, 920px); margin: 0 auto; padding: 50px 0; }
+.world-banner h1 { font-weight: 750; font-size: clamp(2rem, 4.5vw, 3.6rem); margin: 0 0 8px; }
+.world-banner p { margin: 0; max-width: 34ch; font-size: 1.1rem; }
+main.guide, main.planner {
+    position: relative; width: min(100% - 36px, 920px); max-width: none;
+    margin: -22px auto 40px; padding: clamp(18px, 4vw, 42px);
+    background: #fff; border-top: 4px solid #97ce4c; border-radius: 9px;
+}
+.guide label, .planner-form h2 { font-weight: 700; }
+.location-links a { color: #27623c; text-underline-offset: 3px; }
+.planner-form { max-width: 620px; margin: 0 auto; }
+.planner-form form { margin-top: 0; }
+.planner-form button, .guide-portal #activatePortal { background: #97ce4c; color: #192617; font-weight: 700; }
+.planner-form #backBtn { background: #e5ece0; color: #263b26; }
+.guide-portal { background: #f1f6ea; padding: 22px; border: 0; border-left: 4px solid #97ce4c; }
+@media (max-width: 600px) {
+    .world-banner > div { padding-bottom: 40px; }
+    .world-banner p { max-width: 25ch; }
+    main.guide, main.planner { width: calc(100% - 20px); }
+}
+
+/* Illustrated atlas and travel desk */
+.world-banner { min-height: clamp(250px,28vw,360px); border-bottom: 5px solid #97ce4c; }
+.guide-page .world-banner { background-image: linear-gradient(90deg,#101c24 3%,rgba(10,24,31,.86) 30%,transparent 82%),url("../images/citadel.jpg"); background-position: center, center 45%; }
+.edition,.entry-number,.ticket-caption small { display:block; font: bold .78rem/1.4 monospace; letter-spacing:.12em; text-transform:uppercase; }
+.edition { color:#c9ed8e; margin-bottom:12px; }
+.world-banner h1 { font-size:clamp(2.3rem,5.2vw,4.5rem); letter-spacing:-.045em; }
+main.guide,main.planner { width:min(100% - 32px,1040px); padding:clamp(16px,3vw,32px); background:#f8f6ef; border:0; }
+.atlas-tools { display:grid; grid-template-columns:1fr 1fr; align-items:center; gap:8px 20px; }
+.atlas-tools label { margin:0; font-size:1.2rem; }
+.atlas-tools #multiverseSearch { justify-self:end; }
+.location-links { grid-column:1/-1; margin:8px 0 18px; }
+.atlas-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; }
+.location-entry { display:block; border:1px solid #c8cec0; border-radius:8px; overflow:hidden; background:white; padding:0; }
+.location-entry img { width:100%; max-width:none; aspect-ratio:2.45; border-radius:0; }
+.location-entry > div { padding:18px; }
+.entry-number { color:#416730; margin-bottom:6px; }
+.location-entry:first-child { grid-column:1/-1; display:grid; grid-template-columns:1.2fr 1fr; background:#20352d; color:white; }
+.location-entry:first-child img { height:100%; min-height:210px; }
+.location-entry:first-child .entry-number { color:#b4df79; }
+.trip-desk { display:grid; grid-template-columns:1.45fr 1fr; gap:clamp(18px,4vw,50px); }
+.planner-form { width:100%; }
+.trip-steps { display:flex; list-style:none; padding:0; margin:0 0 22px; gap:8px; counter-reset:step; }
+.trip-steps li { flex:1; border-top:3px solid #b5c1b1; padding-top:6px; font: bold .75rem monospace; counter-increment:step; }
+.trip-steps li::before { content:"0" counter(step) " "; }
+.trip-steps [aria-current] { border-color:#508723; color:#355b23; }
+.trip-ticket { align-self:start; background:#21382d; color:white; border-radius:7px; overflow:hidden; }
+.trip-ticket .edition { padding:14px 18px; margin:0; }
+.trip-ticket img { width:100%; aspect-ratio:1.85; object-fit:cover; }
+.ticket-caption { padding:16px 18px; border-top:2px dashed #aac48a; }
+.ticket-caption small { color:#c9ed8e; }
+.ticket-caption h2 { margin:.4rem 0; font-size:1.6rem; }
+.ticket-caption p { margin:0; }
+@media(max-width:660px) {
+    .atlas-tools,.atlas-grid,.trip-desk,.location-entry:first-child { grid-template-columns:1fr; }
+    .atlas-tools #multiverseSearch { justify-self:start; }
+    .location-entry:first-child img { min-height:0; }
+}

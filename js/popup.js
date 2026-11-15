@@ -24,7 +24,7 @@ if (openBtn && overlay) {
     const emailInput = document.getElementById('subscribeEmail');
     const message = document.getElementById('subscribeMessage');
 
-    if (emailInput.value.trim() === '' || !emailInput.value.includes('@')) {
+    if (!validEmail(emailInput.value.trim())) {
         message.textContent = 'Please enter a valid email';
         return;
     }

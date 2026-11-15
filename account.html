@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Traveler account | Rick and Morty</title>
+<link rel="stylesheet" href="CSS/account.css">
+<script src="js/account.js" defer></script>
+    <link rel="stylesheet" href="CSS/theme.css">
+    <script src="js/theme.js"></script>
+    <script src="js/validation.js"></script>
+</head>
+<body class="account">
+<nav id="mainNav" aria-label="Main navigation">
+    <a class="site-brand" href="index.html">Rick and Morty</a>
+    <button id="menuButton" type="button" aria-controls="siteLinks" aria-expanded="false">Menu</button>
+    <div id="siteLinks">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="characters.html">Characters</a>
+        <a class="nav-link" href="multiverse.html">Multiverse</a>
+        <a class="nav-link" href="adventures.html">Adventures</a>
+        <a class="nav-link" href="account.html" aria-current="page">Account</a>
+        <a class="nav-link" href="profile.html">Profile</a>
+        <button id="themeButton" type="button" aria-pressed="false">Dark mode</button>
+    </div>
+</nav>
+<main class="login-layout"><div class="portal-art" aria-hidden="true"></div><section class="login-panel">
+<div class="switch" aria-label="Account options"><button type="button" id="login" aria-pressed="true">Log in</button><button type="button" id="signup" aria-pressed="false">Sign up</button></div>
+<h1 id="formTitle">Log in to your account</h1>
+<form novalidate>
+<label class="extra" hidden>Name<input name="name" autocomplete="name"></label>
+<label>Email address<input name="email" inputmode="email" autocomplete="email"></label>
+<label class="extra" hidden>Phone number<input name="phone" type="tel" autocomplete="tel"></label>
+<label>Password<input name="password" type="password" autocomplete="current-password"></label>
+<p id="message" role="status"></p>
+<button class="action" id="submit">Log in</button>
+</form></section>
+</main><script src="js/navigation.js"></script>
+</body></html>

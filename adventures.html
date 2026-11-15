@@ -12,69 +12,35 @@
         rel="stylesheet">
 
     <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/guide.css">
+    <link rel="stylesheet" href="CSS/theme.css">
+    <script src="js/theme.js"></script>
+    <script src="js/validation.js"></script>
 </head>
 
-<body class="adventures-page">
+<body class="planner-page">
 
-   <nav id="mainNav" class="navbar navbar-expand-lg navbar-dark bg-dark px-4">
-
-    <a class="navbar-brand" href="index.html">
-        RICK AND MORTY
-    </a>
-
-    <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#mainNavbar"
-        aria-controls="mainNavbar"
-        aria-expanded="false"
-        aria-label="Toggle navigation">
-
-        <span class="navbar-toggler-icon"></span>
-
-    </button>
-
-    <div class="collapse navbar-collapse" id="mainNavbar">
-
-        <div class="navbar-nav ms-auto">
-            <button id="colorBtn" class="btn btn-sm btn-outline-success ms-lg-3">
-    Change color
-</button>
-
-            <a class="nav-link" href="index.html">
-                HOME
-            </a>
-
-            <a class="nav-link" href="characters.html">
-                CHARACTERS
-            </a>
-
-            <a class="nav-link" href="multiverse.html">
-                MULTIVERSE
-            </a>
-
-            <a class="nav-link" href="adventures.html">
-                ADVENTURES
-            </a>
-
-        </div>
-
+   <nav id="mainNav" aria-label="Main navigation">
+    <a class="site-brand" href="index.html">Rick and Morty</a>
+    <button id="menuButton" type="button" aria-controls="siteLinks" aria-expanded="false">Menu</button>
+    <div id="siteLinks">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="characters.html">Characters</a>
+        <a class="nav-link" href="multiverse.html">Multiverse</a>
+        <a class="nav-link" href="adventures.html" aria-current="page">Adventures</a>
+        <a class="nav-link" href="account.html">Account</a>
+        <a class="nav-link" href="profile.html">Profile</a>
+        <button id="themeButton" type="button" aria-pressed="false">Dark mode</button>
     </div>
-
 </nav>
+<header class="world-banner"><div><span class="edition">Portal travel &nbsp; / &nbsp; Trip desk</span><h1>Choose your adventure</h1><p>Pick a destination and open a portal to your next stop.</p></div></header>
 
 
-<main>
+<main class="planner">
 
-    <section class="adventure-box">
+    <div class="trip-desk"><section class="planner-form"><ol class="trip-steps" aria-label="Adventure steps"><li>Traveler</li><li>Security</li><li>Destination</li></ol>
 
-        <h1>Choose Your Adventure</h1>
-
-        <p>
-            Select a destination and start your journey
-            across the Rick and Morty multiverse.
-        </p>
+        
 
         <form id="adventureForm" novalidate>
 
@@ -88,7 +54,7 @@
                 <span class="error" id="nameError"></span>
 
                 <label for="player-email">Enter your email:</label>
-                <input type="email" id="player-email" placeholder="Your email">
+                <input type="text" inputmode="email" id="player-email" placeholder="Your email">
                 <span class="error" id="emailError"></span>
 
             </div>
@@ -157,9 +123,14 @@
         </form>
     </section>
 
-<section class="container my-5">
+<aside class="trip-ticket" aria-label="Destination preview">
+<span class="edition">Destination preview</span>
+<img id="ticketImage" src="images/citadel.jpg" alt="Citadel of Ricks">
+<div class="ticket-caption"><small id="ticketLabel">Featured destination</small><h2 id="ticketName">Citadel of Ricks</h2><p id="ticketNote">Choose your own stop in step 3.</p></div>
+</aside></div>
+<section class="planner-gallery">
 
-    <h2 class="text-center mb-4">
+    <h2 >
         Multiverse Gallery
     </h2>
 
@@ -295,6 +266,12 @@
 
 </section>
 
+    <section class="episode-picker" aria-labelledby="episodeTitle">
+        <h2 id="episodeTitle">Episode pick</h2>
+        <p id="episodeResult" role="status">Find an episode for your next watch.</p>
+        <button id="episodeButton" type="button">Pick an episode</button>
+        <a href="https://www.tvmaze.com/shows/216/rick-and-morty">Episode guide on TVmaze</a>
+    </section>
 </main>
 
 <div id="adventureToast" class="adventure-toast" role="status" aria-live="polite">
@@ -306,7 +283,7 @@
     </div>
 </div>
 
-            <img src="images/poopybutthole.png" alt="Mr. Poopybutthole" class="adventure-character-left">
+            
 
     <footer>
         
@@ -321,13 +298,10 @@
 <script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
 
 <script src="js/script.js"></script>
-<script src="js/accordion.js"></script>
 <script src="js/datetime.js"></script>
-<script src="js/color.js"></script>
-<script src="js/keyboard.js"></script>
+<script src="js/navigation.js"></script>
 
-<script src="js/loading.js"></script>
-<script src="js/notification.js"></script>
-<script src="js/adventures-step.js"></script>
+<script src="js/adventure.js"></script>
+<script src="js/episodes.js"></script>
 </body>
 </html>

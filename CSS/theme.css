@@ -1,0 +1,63 @@
+:root {
+    color-scheme: light;
+    --page: #e5ece3;
+    --panel: #f8f6ef;
+    --card: #fff;
+    --ink: #202c26;
+    --accent: #356325;
+    --error: #9a242b;
+}
+:root[data-theme="dark"] {
+    color-scheme: dark;
+    --page: #12191b;
+    --panel: #202a29;
+    --card: #2b3834;
+    --ink: #f1f4ee;
+    --accent: #b9e887;
+    --error: #ffabae;
+}
+#mainNav {
+    position: relative;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 3%;
+    gap: 16px;
+    background: #212529;
+    color: white;
+    font: 14px/1.5 Arial, sans-serif;
+}
+#mainNav a { text-transform: uppercase; color: #dbe2db; text-decoration: none; }
+#mainNav .site-brand { font-size: 20px; color: white; }
+#siteLinks { display: flex; align-items: center; gap: 16px; }
+#mainNav a:hover, #mainNav a[aria-current="page"] { color: #c9ed8e; }
+#mainNav button, .episode-picker button {
+    border: 1px solid #92ac80; padding: 6px 12px; border-radius: 5px;
+    color: white; background: #28382b; cursor: pointer;
+}
+#themeButton::before { content: "○ "; }
+#themeButton[aria-pressed="true"]::before { content: "● "; color: #c9ed8e; }
+#menuButton { display: none; }
+@media (max-width: 940px) {
+    #mainNav { flex-wrap: wrap; }
+    #menuButton { display: block; }
+    #siteLinks { width: 100%; display: none; align-items: start; gap: 10px; }
+    #siteLinks.open { display: flex; flex-direction: column; }
+}
+body[class] { background-color: var(--page); color: var(--ink); }
+main.guide, main.planner, .characters-main, .login-panel, .pass, .Home-page .multiverse-stats,
+.popup, .faq { background-color: var(--panel); color: var(--ink); }
+.character-info, .location-entry:not(:first-child), .guide-portal { background: var(--card); color: var(--ink); }
+.form-control, .popup input, .guide input, .planner-form :is(input, textarea, select), .account input {
+    background-color: var(--card); color: var(--ink);
+}
+body .profile-wrap h1, .Home-page .multiverse-stats h2, .stat-card p, .popup-close { color: var(--ink); }
+.stat-card h3, .faq h2, .guide-portal #portalResult, .guide-portal #portalDescription,
+.guide-portal #copyFeedback, .location-links a, .entry-number, .trip-steps [aria-current],
+.switch button, .switch [aria-pressed="true"], #accountLink, #signInPrompt a { color: var(--accent); }
+.pass-head { color: #172416; }
+.planner-form .error, #message { color: var(--error); }
+.episode-picker { padding-top: 24px; margin-top: 30px; border-top: 1px solid #94a090; }
+.episode-picker a { margin: 8px; display: inline-block; color: var(--accent); }
+.characters-page .character { max-width: none; }

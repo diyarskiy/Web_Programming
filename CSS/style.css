@@ -1,5 +1,3 @@
-/* Первоначальные стили для страницы (1-2) */
-
 /* =========================
    GLOBAL
    ========================= */
@@ -24,25 +22,6 @@ body {
     box-sizing: inherit;
 }
 
-.site-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    width: 100%;
-    padding: 20px 40px;
-
-    position: relative;
-    z-index: 10;
-}
-
-.logo {
-    color: white;
-    font-family: Arial, sans-serif;
-    font-size: 28px;
-    font-weight: bold;
-}
-
 @media (max-width: 1000px) {
     .characters-page .character-list {
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -53,74 +32,6 @@ body {
     .characters-page .character-list {
         grid-template-columns: 1fr;
     }
-}
-
-/* =========================
-   NAVIGATION
-   ========================= */
-
-.nav-menu {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
-    padding: 10px;
-    background: transparent;
-}
-
-.nav-menu a {
-    text-decoration: none;
-    color: #ffffff;
-    font-family: Arial, sans-serif;
-    font-size: 14px;
-    font-weight: bold;
-    text-transform: uppercase;
-    background-color: rgba(255, 255, 255, 0.1);
-    border: 2px solid #97ce4c;
-    padding: 10px 20px;
-    border-radius: 4px;
-    transition: all 0.3s ease;
-}
-
-.nav-menu a:hover {
-    background-color: #00ff5e;
-    color: #000000;
-}
-
-.gallery-item {
-    position: relative;
-    overflow: hidden;
-    border-radius: 10px;
-}
-
-.gallery-item img {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-    display: block;
-
-    transition: transform 0.3s ease;
-}
-
-.gallery-caption {
-    position: absolute;
-
-    left: 0;
-    right: 0;
-    bottom: 0;
-
-    padding: 15px;
-
-    background-color: rgba(0, 0, 0, 0.75);
-    color: white;
-
-    text-align: center;
-    font-weight: bold;
-
-    opacity: 0;
-
-    transition: opacity 0.3s ease;
 }
 
 /* =========================
@@ -155,7 +66,6 @@ body {
 .Home-page main {
     flex: 1;
 
-    
 }
 .home-character {
     position: absolute;
@@ -378,28 +288,9 @@ body {
     background-color: #00ff5e;
 }
 
-
-/* Стили для страниц (3-4) */
-
 /* =========================
    MULTIVERSE PAGE
    ========================= */
-
-.multiverse-page {
-    margin: 0;
-    min-height: 100vh;
-
-    background-color: #090909;
-    background-image: url("../images/multiedit.jpeg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-
-    color: white;
-    font-family: Arial, sans-serif;
-}
-
 
 .multiverse-layout {
     grid-area: main;
@@ -414,84 +305,6 @@ body {
     padding: 60px 20px;
 }
 
-
-.multiverse-content {
-    width: 100%;
-    max-width: 800px;
-
-    text-align: center;
-
-    background-color: rgba(10, 30, 45, 0.9);
-
-    padding: 40px;
-
-    border-radius: 15px;
-    border: 2px solid #97ce4c;
-}
-
-
-.multiverse-content h1 {
-    font-size: 48px;
-
-    margin-top: 0;
-
-    margin-bottom: 20px;
-
-    color: #97ce4c;
-}
-
-
-.multiverse-content h2 {
-    margin-top: 40px;
-
-    margin-bottom: 20px;
-}
-
-
-.intro-text {
-    max-width: 650px;
-
-    margin: 0 auto 40px auto;
-
-    font-size: 18px;
-
-    line-height: 1.6;
-}
-
-
-.multiverse-table {
-    width: 100%;
-
-    border-collapse: collapse;
-
-    margin: 20px auto;
-}
-
-
-.multiverse-table th,
-.multiverse-table td {
-    border: 1px solid #97ce4c;
-
-    padding: 15px;
-
-    text-align: center;
-}
-
-
-.multiverse-table th {
-    background-color: #97ce4c;
-
-    color: black;
-}
-
-.multiverse-info {
-    max-width: 650px;
-
-    margin: 40px auto;
-
-    line-height: 1.6;
-}
-
 footer {
     text-align: center;
 
@@ -502,129 +315,9 @@ footer {
     color: #aaaaaa;
 }
 
-.universe-details {
-    width: 100%;
-    margin-top: 60px;
-}
-
-.universe-card {
-    margin: 50px auto;
-    padding: 30px;
-
-    max-width: 700px;
-
-    border: 2px solid #97ce4c;
-    border-radius: 15px;
-
-    text-align: center;
-
-    scroll-margin-top: 40px;
-}
-
-.universe-card img {
-    width: 300px;
-    max-width: 100%;
-    height: auto;
-
-    margin: 20px 0;
-
-    border-radius: 10px;
-}
-
-.universe-card p {
-    line-height: 1.6;
-}
-
-.multiverse-character-left {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 70px;
-    height: auto;
-}
-
-.multiverse-grid > nav {
-    grid-area: header;
-}
-
-.multiverse-sidebar {
-    grid-area: sidebar;
-}
-
 .multiverse-layout {
     grid-area: main;
 }
-
-.multiverse-grid footer {
-    grid-area: footer;
-}
-
-.multiverse-grid {
-    display: grid;
-
-    grid-template-columns: 220px 1fr;
-
-    grid-template-areas:
-        "header header"
-        "sidebar main"
-        "footer footer";
-
-    min-height: 100vh;
-}
-
-.multiverse-sidebar {
-    padding: 30px 20px;
-
-    background-color: rgba(10, 30, 45, 0.95);
-
-    border-right: 2px solid #97ce4c;
-}
-
-.multiverse-sidebar h2 {
-    color: #97ce4c;
-    margin-top: 0;
-}
-
-.multiverse-sidebar a {
-    display: block;
-
-    margin-bottom: 15px;
-    padding: 10px;
-
-    color: white;
-    text-decoration: none;
-
-    border-radius: 6px;
-
-    transition: 0.3s;
-}
-
-.multiverse-sidebar a:hover {
-    background-color: #97ce4c;
-    color: black;
-}
-
-.multiverse-gallery {
-    width: 100%;
-    max-width: 1000px;
-    margin: 60px auto;
-    padding: 30px;
-}
-
-.multiverse-gallery h2 {
-    text-align: center;
-    color: #97ce4c;
-    font-size: 32px;
-    margin-bottom: 30px;
-}
-
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-}
-
-/* Assignment 6 - Minimal Statistics */
 
 /* Minimal Multiverse Statistics */
 
@@ -696,147 +389,7 @@ footer {
     }
 }
 
-/* =========================
-   ADVENTURES PAGE
-   ========================= */
-
-.adventures-page {
-    margin: 0;
-    min-height: 100vh;
-
-    background: transparent;
-    font-family: Arial, sans-serif;
-    color: white;
-}
-
-.adventure-box {
-    width: 90%;
-    max-width: 650px;
-
-    margin: 80px auto;
-    padding: 40px;
-
-    text-align: center;
-
-    background-color: rgba(10, 30, 45, 0.95);
-
-    border: 2px solid #97ce4c;
-    border-radius: 15px;
-}
-.adventure-box h1 {
-    margin-top: 0;
-
-    font-size: 42px;
-    color: #97ce4c;
-}
-
-
-.adventure-box p {
-    font-size: 18px;
-    line-height: 1.6;
-
-    margin-bottom: 30px;
-}
-
-
-.adventure-box label {
-    display: block;
-
-    margin-top: 20px;
-    margin-bottom: 8px;
-
-    text-align: left;
-
-    font-size: 16px;
-    font-weight: bold;
-}
-
-.adventure-box input,
-.adventure-box select,
-.adventure-box textarea {
-    width: 100%;
-
-    padding: 12px;
-
-    font-size: 16px;
-    font-family: Arial, sans-serif;
-
-    background-color: #111f29;
-    color: white;
-
-    border: 2px solid #97ce4c;
-    border-radius: 6px;
-
-    outline: none;
-}
-
-.adventure-box textarea {
-    min-height: 100px;
-    resize: vertical;
-}
-
-.adventure-box input::placeholder,
-.adventure-box textarea::placeholder {
-    color: #aaaaaa;
-}
-
-.adventure-box input:focus,
-.adventure-box select:focus,
-.adventure-box textarea:focus {
-    border-color: #9be044;
-}
-
-.adventure-box button {
-    margin-top: 30px;
-
-    padding: 12px 30px;
-
-    font-size: 16px;
-    font-weight: bold;
-
-    background-color: #97ce4c;
-    color: black;
-
-    border: none;
-    border-radius: 6px;
-
-    cursor: pointer;
-
-    transition: 0.3s;
-}
-
-.adventure-box button:hover {
-    background-color: #97ce4c;
-
-    transform: scale(1.05);
-}
-
-body.adventures-page {
-    min-height: 100vh;
-
-    background-image:
-        linear-gradient(
-            rgba(0, 0, 0, 0.15),
-            rgba(0, 0, 0, 0.35)
-        ),
-        url("../images/portalAD.jpg");
-
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-}
-
-.adventure-character-left {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100px;
-    height: auto;
-}
-
-
-    /* CHARACTERS */
+/* CHARACTERS */
 
     .characters-main {
         width: 95%;
@@ -854,54 +407,7 @@ body.adventures-page {
         
     }
 
-
-    /* MULTIVERSE GRID */
-
-    .multiverse-grid {
-        grid-template-columns: 1fr;
-
-        grid-template-areas:
-            "header"
-            "sidebar"
-            "main"
-            "footer";
-    }
-    .multiverse-grid > nav {
-    grid-area: header;
-}
-
-    .multiverse-sidebar {
-        border-right: none;
-        border-bottom: 2px solid #97ce4c;
-    }
-
-    .multiverse-content {
-        padding: 20px;
-    }
-
-
-    /* GALLERY */
-
-    .gallery-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-
-    /* ADVENTURES */
-
-    .adventure-box {
-        width: 95%;
-        padding: 25px;
-    }
-
-    
-/* =========================
-   ASSIGNMENT 3
-   RESPONSIVE DESIGN
-   ========================= */
-
-
-/* TABLET */
+    /* TABLET */
 @media (max-width: 768px) {
 
     .welcome {
@@ -916,7 +422,6 @@ body.adventures-page {
     max-width: calc(50% - 15px);
     }   
 }
-
 
 /* MOBILE */
 @media (max-width: 480px) {
@@ -935,17 +440,6 @@ body.adventures-page {
     #multiverseCarousel .carousel-item img {
     height: 250px;
 }
-}
-
-.bootstrap-info {
-    background-color: rgba(10, 30, 45, 0.9);
-    color: white;
-    border-color: #97ce4c;
-}
-
-.bootstrap-info h2,
-.bootstrap-info h3 {
-    color: #97ce4c;
 }
 
 #multiverseCarousel {
@@ -1058,35 +552,6 @@ body.adventures-page {
     font-size: 14px;
 }
 
-.adventure-box input.invalid,
-.adventure-box select.invalid,
-.adventure-box textarea.invalid {
-    border-color: #ff6b6b;
-}
-
-
-
-/* Portal Control */
-
-.portal-control {
-    width: 100%;
-    max-width: 600px;
-    margin: 40px auto;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    gap: 20px;
-    padding: 30px;
-    text-align: center;
-
-    background: rgba(10, 30, 45, 0.9);
-    border: 1px solid #97ce4c;
-    border-radius: 12px;
-}
-
 /* Portal appearance */
 
 .portal-circle {
@@ -1195,35 +660,6 @@ body.adventures-page {
 
 /* Assignment 6 - Multiverse Search */
 
-.multiverse-search-box {
-    width: 100%;
-    max-width: 850px;
-    margin: 0 auto 35px;
-    padding: 22px 26px;
-
-    background: rgba(5, 19, 29, 0.94);
-
-    border: 1px solid #88ff00;
-    border-radius: 16px;
-
-    box-shadow:
-        0 0 12px rgba(136, 255, 0, 0.3),
-        0 0 30px rgba(0, 255, 170, 0.1);
-}
-
-.multiverse-search-heading {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-
-    margin-bottom: 14px;
-
-    color: #aaff00;
-    font-size: 17px;
-    font-weight: bold;
-    letter-spacing: 1.5px;
-}
-
 #multiverseSearch {
     width: 100%;
     padding: 14px 18px;
@@ -1251,18 +687,7 @@ body.adventures-page {
     outline: none;
 }
 
-.search-hint {
-    margin: 12px 0 0;
-
-    color: #a2b8b5;
-    font-size: 13px;
-}
-
 @media (max-width: 768px) {
-    .multiverse-search-box {
-        padding: 16px;
-        margin-bottom: 24px;
-    }
 
     #multiverseSearch {
         font-size: 16px;

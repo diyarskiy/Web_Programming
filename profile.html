@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Traveler profile | Rick and Morty</title>
+<link rel="stylesheet" href="CSS/account.css">
+<script src="js/account.js" defer></script>
+    <link rel="stylesheet" href="CSS/theme.css">
+    <script src="js/theme.js"></script>
+</head>
+<body class="profile">
+<nav id="mainNav" aria-label="Main navigation">
+    <a class="site-brand" href="index.html">Rick and Morty</a>
+    <button id="menuButton" type="button" aria-controls="siteLinks" aria-expanded="false">Menu</button>
+    <div id="siteLinks">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="characters.html">Characters</a>
+        <a class="nav-link" href="multiverse.html">Multiverse</a>
+        <a class="nav-link" href="adventures.html">Adventures</a>
+        <a class="nav-link" href="account.html">Account</a>
+        <a class="nav-link" href="profile.html" aria-current="page">Profile</a>
+        <button id="themeButton" type="button" aria-pressed="false">Dark mode</button>
+    </div>
+</nav>
+<main class="profile-wrap">
+<h1>Traveler profile</h1>
+<p id="signInPrompt">Log in to see your traveler ID. <a href="account.html">Log in</a></p>
+<article class="pass" hidden><div class="pass-head"><strong>Multiverse traveler ID</strong><span id="record"></span></div>
+<div class="pass-body"><div class="monogram" aria-hidden="true"><b id="initials"></b></div><section><h2 id="traveler"></h2>
+<dl><dt>Email address</dt><dd id="email"></dd><dt>Phone number</dt><dd id="phone"></dd></dl></section></div></article>
+<div class="profile-actions" hidden><a class="action" href="adventures.html">Plan an adventure →</a><a id="accountLink" href="account.html">Go to account</a></div></main><script src="js/navigation.js"></script>
+</body></html>
